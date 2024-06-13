@@ -13,7 +13,6 @@ import cors from 'cors';
 
 // Load environment variables from .env file
 dotenv.config();
-app.use('/api/users', require('./routes/users'));
 // Verify if environment variables are loaded correctly
 if (!process.env.MONGO) {
   console.error('MONGO environment variable is not defined');
@@ -53,11 +52,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
 
 
-app.use(express.static(path.join(__dirname,'/client/dist')));
 
-app.get('*',(req,res)=>{
-  res.sendFile(path.join(__dirname,'client','index.html'));
-})
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error('Error occurred:', err); // Enhanced logging
