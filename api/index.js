@@ -13,7 +13,7 @@ import cors from 'cors';
 
 // Load environment variables from .env file
 dotenv.config();
-
+app.use('/api/users', require('./routes/users'));
 // Verify if environment variables are loaded correctly
 if (!process.env.MONGO) {
   console.error('MONGO environment variable is not defined');
