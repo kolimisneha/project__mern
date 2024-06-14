@@ -32,7 +32,7 @@ export default function OAuth() {
 
             // Dispatch the signInSuccess action with the received data
             dispatch(signInSuccess(data));
-            navigate('/home');
+            navigate('/');
         } catch (error) {
             console.error("Could not sign in with Google", error);
         }
